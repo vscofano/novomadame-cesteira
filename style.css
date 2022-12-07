@@ -1,0 +1,1256 @@
+/* GLOBAL */
+body {
+  margin: 0px;
+  background-color: #FBF9F5;
+  color: #111111;
+  font-family: 'Playfair Display', serif;
+  margin-top: 10rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+blockquote,
+dd {
+  margin: 0px;
+}
+
+ul {
+  padding: 0px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utilitarios */
+.container {
+  box-sizing: border-box;
+  max-width: 1100px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.titulo-grande {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  font-weight: 400;
+  color: #A50612;
+}
+
+.sub-titulo {
+  padding: 0 0 30px 85px;
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding-bottom: 30px;
+}
+
+.sub-titulo::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 200px;
+  background: #000;
+  position: absolute;
+  margin: 4px 10px 0 0;
+  transition: 0.3s;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+}
+
+.header-img {
+  margin-bottom: 13rem;
+  padding: 20px 0;
+  position: absolute;
+  max-width: 8rem;
+}
+
+.header-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.header-menu a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0px;
+  background: #000;
+  position: absolute;
+  margin-top: 4px;
+  transition: 0.3s;
+}
+
+.header-menu a:hover::after {
+  width: 40px;
+}
+
+#btn-mobile {
+  display: none;
+}
+
+/* introdução */
+.intro {
+  background: url(img/backgroum-intro.jpeg) no-repeat bottom center scroll;
+  height: 30rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 40px;
+}
+
+.intro-cont {
+  grid-column-start: 2;
+  padding-top: 20px;
+}
+
+.intro-cont h1 {
+  position: relative;
+  margin: 30px 0;
+}
+
+.intro-cont p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  padding-bottom: 24px;
+  max-width: 800px;
+}
+
+/* Cestas de natal */
+.cesta-basica {
+  display: block;
+  margin-bottom: 60px;
+}
+
+.cesta-basica h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.cesta-basica ul {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.cesta-basica li {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.cesta-basica img {
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.cesta-basica h3 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.cesta-basica p {
+  margin-bottom: 5px;
+}
+
+.btn-cesta {
+  border: none;
+  background-color: #FBF9F5;
+  padding: 0;
+}
+
+.btn-cesta img {
+  width: 25px;
+  height: 25px;
+}
+
+.btn-cesta:hover {
+  background-color: #A50612;
+  color: #FFF;
+  transition: 0.3s;
+}
+
+.btn-cesta a {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  padding: 20px 35px 0 30px;
+}
+
+.btn-cesta {
+  display: inline-block;
+  position: relative;
+  background: #c9797f;
+  color: #000;
+  margin-top: 10px;
+}
+
+.btn-cesta p {
+  padding-top: 5px;
+}
+
+.cesta-preco {
+  display: block;
+  font-weight: 800;
+  font-size: 1.75rem;
+  color: #A50612;
+  margin-bottom: 7px;
+}
+
+/* Informações */
+.infos {
+  margin-bottom: 50px;
+}
+
+.infos h2 {
+  position: relative;
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+.infos div {
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.infos div:nth-child(odd) {
+  background-color: #fffffe;
+}
+
+.infos button {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.infos button::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  background-color: #FFD700;
+}
+
+.infos button::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 6px;
+  background: url(img/icone/seta-abrir.svg);
+  transition: 0.3s;
+}
+
+.infos button:hover::after,
+.infos button[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.infos dd {
+  display: none;
+}
+
+.infos dd.ativa {
+  display: block;
+}
+
+.infos dd {
+  padding-left: 20px;
+  padding-top: 15px;
+  max-width: 80ch;
+}
+
+/* sobre */
+.sobre {
+  margin-bottom: 60px;
+}
+
+.sobre h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.sobre-grid {
+  display: flex;
+}
+
+.sobre-grid img {
+  width: 250px;
+  margin-right: 30px;
+}
+
+.sobre button {
+  display: block;
+  position: relative;
+  margin-left: 405px;
+  margin-top: 20px;
+  border: none;
+  background: #A50612;
+  color: #FFF;
+  padding: 15px 20px;
+
+}
+
+.sobre a {
+  padding: 15px 20px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-top: 35px;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* footer */
+.footer-bg {
+  background-color: #111111;
+  height: 120px;
+}
+
+.footer {
+  color: #FFF;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding-top: 30px;
+}
+
+.redes {
+  display: flex;
+  gap: 15px;
+}
+
+/* efeito zoom */
+.zoom {
+  max-width: 100%;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+img.zoom {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.zoom:hover {
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+@media (max-width: 1000px) {
+
+  /* Utilitarios */
+  .container {
+    box-sizing: border-box;
+    max-width: 850px;
+    padding: 0 30px;
+    margin: 0 auto;
+  }
+
+  /* introdução */
+  .intro-cont {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding-top: 15px;
+    margin-left: 220px;
+    margin-right: 50px;
+  }
+
+  /* cestas */
+  .cesta-basica ul {
+    max-width: 800px;
+
+  }
+
+  .cesta-basica li {
+    position: relative;
+    width: 240px;
+    margin: 0 auto;
+  }
+
+  /* infos */
+  .infos {
+    margin-bottom: 45px;
+  }
+
+  /* sobre */
+  .sobre h2 {
+    margin-bottom: 30px;
+  }
+
+  .sobre img {
+    width: 200px;
+    height: 200px;
+    margin-top: 40px;
+  }
+
+  .sobre p {
+    margin-bottom: 40px;
+  }
+
+  .sobre button {
+    margin-left: 275px;
+    margin-bottom: 60px;
+  }
+
+  /* footer */
+  .footer {
+    padding: 25px 0 0 0;
+  }
+}
+
+@media (max-width: 800px) {
+
+  /* Utilitarios */
+
+  .container {
+    max-width: 750px;
+  }
+
+  /* introdução */
+  .intro {
+    height: 28rem;
+  }
+
+  .intro h1 {
+    font-size: 3.3rem;
+  }
+
+  .intro-cont {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding-top: 15px;
+    margin-left: 120px;
+    margin-right: 50px;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  /* cestas */
+  .cesta-basica ul {
+    max-width: 750px;
+
+  }
+
+  .cesta-basica li {
+    position: relative;
+    width: 240px;
+    margin: 0 auto;
+  }
+
+  .cesta-basica h3 {
+    font-size: 0.97rem;
+  }
+
+  .cesta-basica span {
+    font-size: 0.97;
+  }
+
+  .cesta-basica p {
+    font-size: 0.97;
+  }
+
+  .sobre button {
+    margin-left: 230px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 700px) {
+  /* Utilitarios */
+  .container {
+    max-width: 650px;
+  }
+
+  /* introdução */
+  .intro {
+    height: 28rem;
+  }
+
+  .intro h1 {
+    font-size: 3.3rem;
+  }
+
+  .intro-cont {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding-top: 15px;
+    margin-left: 120px;
+    margin-right: 50px;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  /* cestas */
+  .cesta-basica ul {
+    max-width: 650px;
+  }
+
+  .cesta-basica li {
+    position: relative;
+    width: 240px;
+    margin: 0 auto;
+  }
+
+  .cesta-basica h3 {
+    font-size: 0.97rem;
+  }
+
+  .cesta-basica span {
+    font-size: 0.97;
+  }
+
+  .cesta-basica p {
+    font-size: 0.97;
+  }
+
+  .sobre button {
+    margin-left: 180px;
+    margin-bottom: 60px;
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 0px;
+  }
+
+  .galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+}
+
+
+@media (max-width: 600px) {
+
+  /* utilitarios */
+  .titulo-grande {
+    font-size: 3rem;
+  }
+
+  .container {
+    max-width: 550px;
+  }
+
+  /* menu */
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 230px;
+    right: 0px;
+    background: #e7e7e7;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  #nav.active #menu {
+    height: 475px;
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #menu li {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+
+  #menu a {
+    margin: 0 1rem;
+    padding-top: 10px;
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  /* introdução */
+  .intro {
+    height: 26rem;
+  }
+
+  .intro h1 {
+    margin-top: 0;
+  }
+
+  .intro-cont {
+    margin-left: 50px;
+  }
+
+  .intro-cont p {
+    margin-left: -20px;
+  }
+  
+  .intro p {
+    font-size: 0.98rem;
+  }
+
+  /* cestas */
+  .cesta-basica ul {
+    max-width: 550px;
+  }
+
+  .cesta li {
+    width: 200px;
+    gap: 0px;
+  }
+
+  .cesta h2 {
+    font-size: 2.5rem;
+  }
+
+  .cesta img {
+    height: px;
+  }
+
+  .cesta h3 {
+    font-size: 0.98rem;
+  }
+
+  .cesta p {
+    font-size: 0.98rem;
+  }
+
+  
+
+  /* infos */
+  .infos h2 {
+    font-size: 3rem;
+  }
+
+  .infos dt button {
+    font-size: 1rem;
+  }
+
+  .infos dd {
+    font-size: 0.9rem;
+  }
+
+  /* sobre */
+  .sobre img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .sobre button {
+    margin-left: 120px;
+  }
+
+  .galeria {
+    margin-bottom: 60px;
+  }
+
+  .galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 500px) {
+
+  /* utilitarios */
+  .titulo-grande {
+    font-size: 3rem;
+  }
+
+  .container {
+    max-width: 450px;
+  }
+
+  /* menu */
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 230px;
+    right: 0px;
+    background: #e7e7e7;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  #nav.active #menu {
+    height: 475px;
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #menu li {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+
+  #menu a {
+    margin: 0 1rem;
+    padding-top: 10px;
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  /* introdução */
+  .intro {
+    height: 30rem;
+  }
+
+  .intro h1 {
+    margin-top: 0;
+  }
+
+  .intro-cont {
+    margin-left: 50px;
+  }
+
+  .intro-cont p {
+    margin-left: -20px;
+  }
+  
+  .intro p {
+    font-size: 0.98rem;
+  }
+
+  /* cestas */
+  .cesta-basica ul {
+    max-width: 250px;
+  }
+
+  .cesta li {
+    width: 200px;
+    gap: 0px;
+  }
+
+  .cesta h2 {
+    font-size: 2.5rem;
+  }
+
+  .cesta img {
+    height: px;
+  }
+
+  .cesta h3 {
+    font-size: 0.98rem;
+  }
+
+  .cesta p {
+    font-size: 0.98rem;
+  }
+
+  .btn-cesta {
+    margin-bottom: 40px;
+  }
+
+  /* infos */
+  .infos h2 {
+    font-size: 3rem;
+  }
+
+  .infos dt button {
+    font-size: 1rem;
+  }
+
+  .infos dd {
+    font-size: 0.9rem;
+  }
+
+  /* sobre */
+  .sobre img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .sobre button {
+    margin-left: 80px;
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr;
+    margin-top: 0px;
+  }
+
+  .galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 400px) {
+
+  /* utilitarios */
+  .titulo-grande {
+    font-size: 3rem;
+  }
+
+  .container {
+    max-width: 350px;
+  }
+
+  /* menu */
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 230px;
+    right: 0px;
+    background: #e7e7e7;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  #nav.active #menu {
+    height: 475px;
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #menu li {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+
+  #menu a {
+    margin: 0 1rem;
+    padding-top: 10px;
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  /* introdução */
+  .intro {
+    height: 33rem;
+  }
+
+  .intro h1 {
+    margin-top: 0;
+  }
+
+  .intro-cont {
+    margin-left: 50px;
+  }
+
+  .intro-cont p {
+    margin-left: -20px;
+  }
+  
+  .intro p {
+    font-size: 0.98rem;
+  }
+
+  /* cestas */
+  .cesta-basica ul {
+    max-width: 250px;
+  }
+
+  .cesta li {
+    width: 200px;
+    gap: 0px;
+  }
+
+  .cesta h2 {
+    font-size: 2.5rem;
+  }
+
+  .cesta img {
+    height: px;
+  }
+
+  .cesta h3 {
+    font-size: 0.98rem;
+  }
+
+  .cesta p {
+    font-size: 0.98rem;
+  }
+
+  .btn-cesta {
+    margin-bottom: 40px;
+  }
+
+  /* infos */
+  .infos h2 {
+    font-size: 3rem;
+  }
+
+  .infos dt button {
+    font-size: 1rem;
+  }
+
+  .infos dd {
+    font-size: 0.9rem;
+  }
+
+  /* sobre */
+  .sobre img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .sobre button {
+    margin-left: 80px;
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr;
+    margin-top: 0px;
+  }
+
+  .galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 300px) {
+
+  /* utilitarios */
+
+  .container {
+    max-width: 250px;
+  }
+
+  /* menu */
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 230px;
+    right: 0px;
+    background: #e7e7e7;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  #nav.active #menu {
+    height: 475px;
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #menu li {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+
+  #menu a {
+    margin: 0 1rem;
+    padding-top: 10px;
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  /* introdução */
+  .intro {
+    height: 43rem;
+  }
+
+  .intro h1 {
+    font-size: 2.2rem;
+    margin-top: 0;
+  }
+
+
+  .intro-cont {
+    margin-left: 50px;
+  }
+
+  .intro-cont p {
+    margin-left: -20px;
+  }
+  
+  .intro p {
+    font-size: 0.98rem;
+  }
+
+  /* cestas */
+  .cesta-basica ul {
+    max-width: 250px;
+  }
+
+  .cesta li {
+    width: 200px;
+    gap: 0px;
+  }
+
+  .cesta h2 {
+    font-size: 2.2rem;
+  }
+
+  .cesta img {
+    height: px;
+  }
+
+  .cesta h3 {
+    font-size: 0.95rem;
+  }
+
+  .cesta p {
+    font-size: 0.95rem;
+  }
+
+  .btn-cesta {
+    margin-bottom: 40px;
+  }
+
+  /* infos */
+  .infos h2 {
+    font-size: 2.5rem;
+  }
+
+  .infos dt button {
+    font-size: 1rem;
+  }
+
+  .infos dd {
+    font-size: 0.9rem;
+  }
+
+  /* sobre */
+  .sobre h2 {
+    font-size: 2.5rem;
+  }
+
+  .sobre img {
+    display: none;
+    height: 100px;
+    width: 100px;
+  }
+
+  .sobre button {
+    margin-left: 0px;
+  }
+
+  .galeria {
+    display: none;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr;
+    margin-top: 0px;
+  }
+
+  .galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+  }
+}
